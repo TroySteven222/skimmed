@@ -6,7 +6,11 @@ var dailymail = fetch('https://newsapi.org/v1/articles?source=daily-mail&sortBy=
 .then(data => data.json());
 
 // load dictionary
+var positive  = fetch('https://raw.githubusercontent.com/connor50/skimmed/master/assets/negative.txt');
 
+var negative = fetch('https://raw.githubusercontent.com/connor50/skimmed/master/assets/positive.txt');
+
+console.log(positive);
 
 Promise.all([bbc, dailymail])
 .then(arrays => {
